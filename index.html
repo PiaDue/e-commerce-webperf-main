@@ -35,14 +35,6 @@
     <!-- slider links -->
     <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-    />
     <!-- EXTERNAL LINKS -->
     <link rel="stylesheet" href="css/header.css" />
     <!-- favicon -->
@@ -141,6 +133,17 @@
     </header>
     <!-- SLIDER -->
     <div id="2"></div>
+    <style>
+      #containerSlider{
+        display: grid;
+        grid-template-columns: repeat(4, 100%);
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
+      }
+      .slidingImage{
+        scroll-snap-align: start;
+      }
+    </style>
     <section>
       <div id="containerSlider">
         <div id="slidingImage">
@@ -243,36 +246,6 @@
       </section>
     </footer>
   </body>
-
-  <!-- slider JS START -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#containerSlider").slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-      });
-    });
-  </script>
-  <!-- slider JS ENDS -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#containerSlider").slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-      });
-    });
-  </script>
 
   <!-- content JS -->
   <script
