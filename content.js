@@ -97,7 +97,7 @@ function dynamicClothingSection(ob) {
 
         await globalThis.scheduler?.yield?.();
 
-        import("qr-code").then((module) => {
+        import("qrcode").then((module) => {
           const QRCode = module.default;
           QRCode.toCanvas(
             canvas,
@@ -178,7 +178,7 @@ httpRequest.send();
 
 var canvas = document.getElementById("qrcode-canvas");
 
-import("qr-code").then((module) => {
+import("qrcode").then((module) => {
   const QRCode = module.default;
   QRCode.toCanvas(canvas, "https://google.com", function (error) {
     if (error) console.error(error);
