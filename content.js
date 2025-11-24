@@ -1,4 +1,4 @@
-import QRCode from "qrcode";
+const { default: QRCode } = await import("qrcode");
 
 let contentTitle;
 
