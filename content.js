@@ -1,5 +1,3 @@
-const { default: QRCode } = await import("qrcode");
-
 let contentTitle;
 
 console.log(document.cookie);
@@ -99,10 +97,13 @@ function dynamicClothingSection(ob) {
 
         await globalThis.scheduler?.yield?.();
 
-        QRCode.toCanvas(
-          canvas,
-          window.location.origin + "/contentDetails.html?" + ob.id
-        );
+        import("qr-code").then((module) => {
+          const QRCode = module.default;
+          QRCode.toCanvas(
+            canvas,
+            window.location.origin + "/contentDetails.html?" + ob.id
+          );
+        });
       }
       dialog.appendChild(canvas);
     }
@@ -177,7 +178,10 @@ httpRequest.send();
 
 var canvas = document.getElementById("qrcode-canvas");
 
-QRCode.toCanvas(canvas, "https://google.com", function (error) {
-  if (error) console.error(error);
-  console.log("success!");
+import("qr-code").then((module) => {
+  const QRCode = module.default;
+  QRCode.toCanvas(canvas, "https://google.com", function (error) {
+    if (error) console.error(error);
+    console.log("success!");
+  });
 });
