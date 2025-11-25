@@ -79,8 +79,8 @@ function dynamicClothingSection(ob) {
       if (child !== boxDiv) {
         const relatedImg = child.querySelector("img").cloneNode();
 
-        relatedImg.style.width = "100px";
-        relatedImg.style.height = "100px";
+        relatedImg.style.width = "185px";
+        relatedImg.style.height = "247px";
         relatedImg.style.objectFit = "contain";
         relatedImg.style.margin = "10px";
         relatedImg.classList.add("related-product");
@@ -110,7 +110,8 @@ function dynamicClothingSection(ob) {
 
     const items = document.querySelectorAll(".related-product");
     items.forEach((item) => {
-      item.style.width = Math.random() * 200 + "px";
+      item.style.width = "270";
+      item.style.height = "230";
       const width = item.getBoundingClientRect().width;
       console.log(width);
       const widths = JSON.parse(localStorage.getItem("random_widths") || "[]");
